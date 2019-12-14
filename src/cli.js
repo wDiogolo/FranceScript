@@ -17,5 +17,5 @@ fs.readFile(filepath, 'utf8', function (err, content) {
         return process.exit(1);
     }
 
-    eval(core.compile(content, "fr")));
+    eval(core.compile(content, "fr"));
 });
