@@ -3,6 +3,7 @@
 const { compile } = require("./core");
 const { readFileSync, existsSync, writeFileSync } = require("fs");
 const { redBright, yellow, green } = require ("chalk");
+const _eval = require("node-eval");
 
 (async function(){
 	let argv = process.argv.slice(2);
@@ -55,7 +56,7 @@ const { redBright, yellow, green } = require ("chalk");
 				
 				console.log(green("Le fichier a été compilé avec succès, execution..."));
 				
-				eval(compiledContent);
+				_eval(compiledContent);
 			}
 			catch(ex) {
 				console.log(redBright("Une erreur est survenue pendant l'execution du fichier\n " + ex.stack));
