@@ -1,5 +1,5 @@
 # FranceScript
-FranceScript est un "langage" compilé en JavaScript et basé sur YoptaScript (voir license).
+FranceScript est un "langage" compilé en JavaScript et basé sur YoptaScript.
 
 ## Installation
 Exécutez : `npm install -g francescript`
