@@ -11,7 +11,7 @@ var dictionary = [
     , ["delete", "supprimer"]
     , ["delete", "faireuneyann"]
     , ["delete", "8moisalacorbeille"]
-    , ["do", "faire"]
+    , ["do", "effectuer"]
     , ["else", "sinon"]
     , ["finally", "alafin"]
     , ["for", "pour"]
