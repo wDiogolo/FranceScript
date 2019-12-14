@@ -182,7 +182,7 @@ var dictionary = [
     , ["getElementsByName", "obtenirElementsParLesNoms"]
     , ["getSelection", "obtenirSelection"]
     , ["hasFocus", "aUnFocus"]
-    , ["open", "ouvrir"]
+    , ["open", "lire"]
     , ["queryCommandEnabled", "demanderCommandeActivee"]
     , ["queryCommandEnabled", "requeteCommandeActivee"]
     , ["queryCommandState", "demanderEtatDeCommande"]

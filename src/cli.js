@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
 const { compile } = require("./core");
-const { readFileSync, existsSync, writeFileSync } = require("fs");
+const { realpath, readFileSync, existsSync, writeFileSync } = require("fs");
 const { redBright, yellow, green } = require ("chalk");
-const _eval = require("node-eval");
+const { exec } = require("child_process");
+
+ _eval = require("node-eval");
 
 (async function(){
 	let argv = process.argv.slice(2);
@@ -53,10 +55,16 @@ const _eval = require("node-eval");
 				let fileName = filePath.split("/").pop().split(".")[0];
 				let fileContent = readFileSync(filePath).toString();
 				let compiledContent = compile(fileContent, "fr");
+				let compiledPath = realpath(filePath);
 				
 				console.log(green("Le fichier a été compilé avec succès, execution..."));
 				
-				_eval(compiledContent);
+				exec(compiledContent, null, (error) => {
+					if(error){
+						console.log(error);
+						return process.exit(1);
+					}
+				});
 			}
 			catch(ex) {
 				console.log(redBright("Une erreur est survenue pendant l'execution du fichier\n " + ex.stack));
