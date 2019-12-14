@@ -32,7 +32,7 @@ const { redBright, yellow, green } = require ("chalk");
 				console.log(green("Le fichier a été compilé avec succès vers : " + compilePath));
 			}
 			catch(ex) {
-				console.log(redBright("Une erreur est survenue pendant la compilation du fichier\n " + ex.message));
+				console.log(redBright("Une erreur est survenue pendant la compilation du fichier\n " + ex.stack));
 			}
 		break;
 		
@@ -58,7 +58,7 @@ const { redBright, yellow, green } = require ("chalk");
 				eval(compiledContent);
 			}
 			catch(ex) {
-				console.log(redBright("Une erreur est survenue pendant l'execution du fichier\n " + ex.message));
+				console.log(redBright("Une erreur est survenue pendant l'execution du fichier\n " + ex.stack));
 			}
 		break;
 		
