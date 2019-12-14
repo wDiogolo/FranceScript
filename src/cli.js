@@ -24,7 +24,7 @@ const { redBright, yellowBright, green } = require ("chalk");
 				
 				let fileName = filePath.split("/").pop().split(".")[0];
 				let fileContent = readFileSync(filePath).toString();
-				let compiledContent = core.compile(fileContent, "fr");
+				let compiledContent = compile(fileContent, "fr");
 				let compilePath = filePath.split("/").slice(0, 1).join("/") + fileName + ".fr";
 				
 				writeFileSync(compilePath, compiledContent, "utf8");
@@ -51,7 +51,7 @@ const { redBright, yellowBright, green } = require ("chalk");
 				
 				let fileName = filePath.split("/").pop().split(".")[0];
 				let fileContent = readFileSync(filePath).toString();
-				let compiledContent = core.compile(fileContent, "fr");
+				let compiledContent = compile(fileContent, "fr");
 				
 				console.log(green("Le fichier a été compilé avec succès, execution..."));
 				
