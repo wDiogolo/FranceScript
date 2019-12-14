@@ -1,7 +1,7 @@
 const core = require('./core');
 
 document.querySelectorAll('[language="FranceScript"]').forEach(yoptaToJs);
-document.querySelectorAll('[type="text/x-francescript"]').forEach(yoptaToJs);
+document.querySelectorAll('[type="text/x-francescript"]').forEach(frToJs);
 
 window.france = core;
 
