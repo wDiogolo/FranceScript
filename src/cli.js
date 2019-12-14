@@ -15,7 +15,7 @@ const { redBright, yellowBright, green } = require ("chalk");
 					console.log(redBright("Veuillez spécifier le chemin jusqu'au fichier!"));
 					return process.exit(1);
 				}
-				else if(existsSync(filePath)){
+				else if(!existsSync(filePath)){
 					console.log(redBright("Fichier introuvable"));
 					return process.exit(1);
 				}
@@ -42,7 +42,7 @@ const { redBright, yellowBright, green } = require ("chalk");
 					console.log(redBright("Veuillez spécifier le chemin jusqu'au fichier!"));
 					return process.exit(1);
 				}
-				else if(existsSync(filePath)){
+				else if(!existsSync(filePath)){
 					console.log(redBright("Fichier introuvable"));
 					return process.exit(1);
 				}
