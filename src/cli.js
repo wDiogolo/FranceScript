@@ -5,8 +5,6 @@ const { realpath, readFileSync, existsSync, writeFileSync } = require("fs");
 const { redBright, yellow, green } = require ("chalk");
 const { exec } = require("child_process");
 
- _eval = require("node-eval");
-
 (async function(){
 	let argv = process.argv.slice(2);
 	let filePath = argv[1];
