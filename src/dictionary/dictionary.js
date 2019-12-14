@@ -114,25 +114,22 @@ var dictionary = [
     , ["false", "faux"]
     , ["eval", "evaluation"]
     , ["'use strict'", "utilise strictement"]
+    // Debut des caracteres speciaux
     , ["{", "ouvrir"]
     , ["{", "faire"]
     , ["{", "vasYOuvreTaGueule"]
     , ["}", "fermer"]
     , ["}", "vasYFermeTaGueule"]
-    // Debut ==
     , ["==", "faibleegalite"]
     , ["==", "doubleegal"]
     , ["==", "egalabstrait"]
     , ["==", "ilsboiventduspritesamere"]
     , ["==", "deuxegal"]
-    // Fin des == 
-    // Debut des ===
     , ["===", "strictementegal"]
     , ["===", "tripleegal"]
     , ["===", "egalitestricte"]
     , ["===", "identite"]
     , ["===", "estsombrementegal"]
-    // Fin des ===
     , [">=", "superieurouegal"]
     , ["<=", "inferieurouegal"]
     , ["&&", "et"]
@@ -148,6 +145,9 @@ var dictionary = [
     , ["++", "incrementer"]
     , ["--", "enlever1"]
     , ["--", "decrementer"]
+    , ["//", "jsuisUnFantomeQuiDevraitServirDeCommentaireNormalement#"]
+    , ["//", "jsuisUnFantome#"]
+    , [".", "->"]
 //    Document methods
     , ["document", "document"]
     , ["captureEvents", "captureEvenements"]
@@ -667,7 +667,7 @@ var dictionary = [
     , ["abort", "abandonner"]
     , ["abort", "avorterDeSesGosses"]
     , ["getResponseHeader", "obtenirLaReponseDEnTete"]
-    , ["send", "enoyer"]
+    , ["send", "envoyer"]
     , ["send", "sendNudes"]
 //    XMLHttpRequest Inheritance
     , ["XMLHttpRequestEventTarget", "requeteEvenementDeCibleXMLHttp"]
