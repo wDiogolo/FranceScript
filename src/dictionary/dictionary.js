@@ -1,15 +1,4 @@
-/*!
- * YoptaScript v0.3.5 (https://yopta.space)
- * Copyright (c) 2016-2017 Yopta.Space project and Contributors
- * Licensed under the MIT license
- */
-
-/* Изначально массив элементов у нас не отсортирован.
- * Сортируем массив для корректной работы алгоритма перевода.
- * Любые правки по словарю языка сначала пишем сюда!
- */
 var dictionary = [
-
     ["break", "rupture"]
     , ["break", "ruptureanal"]
     , ["case", "boite"]
@@ -125,7 +114,6 @@ var dictionary = [
     , ["false", "faux"]
     , ["eval", "evaluation"]
     , ["\'use strict\'", "\"utilise strictement\""]
-//    Операторы сравнения и логические операторы, синтаксические
     , [" \\{ ", "ouvrir"]
     , [" \\{ ", "faire"]
     , [" \\{ ", "vasYOuvreTaGueule"]
@@ -831,11 +819,8 @@ var dictionary = [
     , ["global", "global"]
 ];
 
-//Для сортировки по количеству символов
 dictionary.sort(function (a, b) {
     if (a[1].length < b[1].length) return 1;
     else if (a[1].length > b[1].length) return -1;
     else return 0;
 });
-console.log(JSON.stringify(dictionary, null, '\t'));
-//END
