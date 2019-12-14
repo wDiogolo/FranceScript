@@ -57,7 +57,7 @@ const { exec } = require("child_process");
 				
 				console.log(green("Le fichier a été compilé avec succès, execution..."));
 				
-				exec("node " + compiledContent, null, (error) => {
+				exec("node " + compiledPath, null, (error) => {
 					if(error){
 						console.log(error);
 						return process.exit(1);
