@@ -50,10 +50,10 @@ const { exec } = require("child_process");
 				
 				console.log(yellow("Compilation en cours..."));
 				
-				let fileName = realpath(filePath.split("/").pop().split(".")[0]);
+				let fileName = filePath.split("/").pop().split(".")[0];
 				let fileContent = readFileSync(filePath).toString();
 				let compiledContent = compile(fileContent, "fr");
-				let compilePath = realpath("./" + fileName + ".js");
+				let compilePath = "./" + fileName + ".js";
 				
 				writeFileSync(compilePath, compiledContent, "utf8");
 				console.log(green("Le fichier a été compilé avec succès, execution..."));
