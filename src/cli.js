@@ -1,6 +1,6 @@
-import { compile } from "./core";
-import { readFileSync, existsSync, writeFileSync } from "fs";
-import { redBright, yellowBright, green } from "chalk";
+var  { compile } = require("./core");
+var { readFileSync, existsSync, writeFileSync } = require("fs");
+var { redBright, yellowBright, green } = require ("chalk");
 
 (async function(){
 	let argv = process.argv.slice(2);
@@ -13,7 +13,7 @@ import { redBright, yellowBright, green } from "chalk";
 					console.log(redBright("Veuillez spécifier le chemin jusqu'au fichier!"));
 					return process.exit(1);
 				}
-				else if(fs.existsSync(filePath)){
+				else if(existsSync(filePath)){
 					console.log(redBright("Fichier introuvable"));
 					return process.exit(1);
 				}
@@ -21,11 +21,11 @@ import { redBright, yellowBright, green } from "chalk";
 				console.log(yellowBright("Compilation en cours..."));
 				
 				let fileName = filePath.split("/").pop().split(".")[0];
-				let fileContent = fs.readFileSync(filePath).toString();
+				let fileContent = readFileSync(filePath).toString();
 				let compiledContent = core.compile(fileContent, "fr");
 				let compilePath = filePath.split("/").slice(0, 1).join("/") + fileName + ".fr";
 				
-				fs.writeFileSync(compilePath, compiledContent, "utf8");
+				writeFileSync(compilePath, compiledContent, "utf8");
 				
 				console.log(green("Le fichier a été compilé avec succès vers : " + compilePath));
 			}
@@ -40,7 +40,7 @@ import { redBright, yellowBright, green } from "chalk";
 					console.log(redBright("Veuillez spécifier le chemin jusqu'au fichier!"));
 					return process.exit(1);
 				}
-				else if(fs.existsSync(filePath)){
+				else if(existsSync(filePath)){
 					console.log(redBright("Fichier introuvable"));
 					return process.exit(1);
 				}
@@ -48,7 +48,7 @@ import { redBright, yellowBright, green } from "chalk";
 				console.log(yellowBright("Compilation en cours..."));
 				
 				let fileName = filePath.split("/").pop().split(".")[0];
-				let fileContent = fs.readFileSync(filePath).toString();
+				let fileContent = readFileSync(filePath).toString();
 				let compiledContent = core.compile(fileContent, "fr");
 				
 				console.log(green("Le fichier a été compilé avec succès, execution..."));
