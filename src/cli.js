@@ -1,6 +1,6 @@
-const core = require('./core'),
-fs = require('fs'),
-chalk = require("chalk");
+const core = require('./core');
+const fs = require('fs');
+const chalk = require("chalk");
 
 (async function(){
 	let argv = process.argv.slice(2);
