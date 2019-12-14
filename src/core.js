@@ -1,4 +1,4 @@
-const dictionary = require('./dictionary/main');
+const dictionary = require('./dictionary');
 
 const
   LANGS = {
