@@ -1,5 +1,4 @@
 var dictionary = [
-
     ["break", "rupture"]
     , ["break", "ruptureanal"]
     , ["case", "boite"]
