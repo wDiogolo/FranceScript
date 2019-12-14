@@ -1,6 +1,8 @@
-var  { compile } = require("./core");
-var { readFileSync, existsSync, writeFileSync } = require("fs");
-var { redBright, yellowBright, green } = require ("chalk");
+#!/usr/bin/env node
+
+const { compile } = require("./core");
+const { readFileSync, existsSync, writeFileSync } = require("fs");
+const { redBright, yellowBright, green } = require ("chalk");
 
 (async function(){
 	let argv = process.argv.slice(2);
@@ -13,7 +15,7 @@ var { redBright, yellowBright, green } = require ("chalk");
 					console.log(redBright("Veuillez spécifier le chemin jusqu'au fichier!"));
 					return process.exit(1);
 				}
-				else if(existsSync(filePath)){
+				else if(!existsSync(filePath)){
 					console.log(redBright("Fichier introuvable"));
 					return process.exit(1);
 				}
@@ -22,7 +24,7 @@ var { redBright, yellowBright, green } = require ("chalk");
 				
 				let fileName = filePath.split("/").pop().split(".")[0];
 				let fileContent = readFileSync(filePath).toString();
-				let compiledContent = core.compile(fileContent, "fr");
+				let compiledContent = compile(fileContent, "fr");
 				let compilePath = filePath.split("/").slice(0, 1).join("/") + fileName + ".fr";
 				
 				writeFileSync(compilePath, compiledContent, "utf8");
@@ -40,7 +42,7 @@ var { redBright, yellowBright, green } = require ("chalk");
 					console.log(redBright("Veuillez spécifier le chemin jusqu'au fichier!"));
 					return process.exit(1);
 				}
-				else if(existsSync(filePath)){
+				else if(!existsSync(filePath)){
 					console.log(redBright("Fichier introuvable"));
 					return process.exit(1);
 				}
@@ -49,7 +51,7 @@ var { redBright, yellowBright, green } = require ("chalk");
 				
 				let fileName = filePath.split("/").pop().split(".")[0];
 				let fileContent = readFileSync(filePath).toString();
-				let compiledContent = core.compile(fileContent, "fr");
+				let compiledContent = compile(fileContent, "fr");
 				
 				console.log(green("Le fichier a été compilé avec succès, execution..."));
 				
