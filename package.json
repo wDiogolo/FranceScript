@@ -2,11 +2,15 @@
   "name": "FranceScript",
   "version": "1.0.0",
   "description": "Un \"langage\" uniquement français compilé en JavaScript et un peu troll.",
-  "authors": "Seyz123 and NarumiLy",
+  "authors": {
+    "name": "Seyz123 and NarumiLy",
+    "github": "https://github.com/Seyz123/ and https://github.com/NarumiLy/"
+  },
   "main": "./src/core.js",
   "repository": {
    "type": "github",
-   "url": "https://github.com/Seyz123/FranceScript"
+   "url": "https://github.com/Seyz123/FranceScript",
+   "discord": "https://discord.gg/nEQyVAu"
   },
   "scripts": {
     "build": "gulp build"
@@ -16,7 +20,12 @@
   },
   "keywords": [
     "transpiler",
-    "language"
+    "language",
+    "troll",
+    "jsmodifier",
+    "frenchlanguage",
+    "trollLanguage",
+    "npm"
   ],
   "dependencies": {
     "babel-preset-es2015": "^6.18.0",
