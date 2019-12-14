@@ -143,12 +143,11 @@ var dictionary = [
     , ["=", "egal"]
     , ["=", "vraimentegal"]
     , [";", " fin"]
-    , [";", " lafin"]
     , ["!", "nestpas"]
     , ["++", "rajouter1"]
     , ["++", "incrementer"]
     , ["--", "enlever1"]
-    , ["--", "derementer"]
+    , ["--", "decrementer"]
 //    Document methods
     , ["document", "document"]
     , ["captureEvents", "captureEvenements"]
