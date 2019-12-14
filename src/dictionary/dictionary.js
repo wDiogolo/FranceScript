@@ -824,3 +824,5 @@ dictionary.sort(function (a, b) {
     else if (a[1].length > b[1].length) return -1;
     else return 0;
 });
+
+module.exports = dictionary;
