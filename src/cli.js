@@ -2,7 +2,7 @@
 
 const { compile } = require("./core");
 const { readFileSync, existsSync, writeFileSync } = require("fs");
-const { redBright, yellowBright, green } = require ("chalk");
+const { redBright, goldBright, green } = require ("chalk");
 
 (async function(){
 	let argv = process.argv.slice(2);
@@ -20,12 +20,12 @@ const { redBright, yellowBright, green } = require ("chalk");
 					return process.exit(1);
 				}
 				
-				console.log(yellowBright("Compilation en cours..."));
+				console.log(goldBright("Compilation en cours..."));
 				
 				let fileName = filePath.split("/").pop().split(".")[0];
 				let fileContent = readFileSync(filePath).toString();
 				let compiledContent = compile(fileContent, "fr");
-				let compilePath = filePath.split("/").slice(0, 1).join("/") + fileName + ".fr";
+				let compilePath = "./" + fileName + ".js";
 				
 				writeFileSync(compilePath, compiledContent, "utf8");
 				
@@ -47,7 +47,7 @@ const { redBright, yellowBright, green } = require ("chalk");
 					return process.exit(1);
 				}
 				
-				console.log(yellowBright("Compilation en cours..."));
+				console.log(goldBright("Compilation en cours..."));
 				
 				let fileName = filePath.split("/").pop().split(".")[0];
 				let fileContent = readFileSync(filePath).toString();
