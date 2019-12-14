@@ -1,6 +1,8 @@
-var  { compile } = require("./core");
-var { readFileSync, existsSync, writeFileSync } = require("fs");
-var { redBright, yellowBright, green } = require ("chalk");
+#!/usr/bin/env node
+
+const { compile } = require("./core");
+const { readFileSync, existsSync, writeFileSync } = require("fs");
+const { redBright, yellowBright, green } = require ("chalk");
 
 (async function(){
 	let argv = process.argv.slice(2);
