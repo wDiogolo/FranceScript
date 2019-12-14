@@ -816,6 +816,8 @@ var dictionary = [
     , ["exports", "exporterLesJuifs"]
     , ["export", "exporterLeJuif"]
     , ["global", "global"]
+    , ["require", "requiere"]
+    , ["require", "depend"]
 ];
 
 dictionary.sort(function (a, b) {

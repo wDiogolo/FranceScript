@@ -1,0 +1,10 @@
+constante express egal depend("express") fin
+variable app egal express() fin
+
+app->get("/*", esclave(req, res) faire
+	res->end("Hello world !") fin
+fermer)
+
+app->listen("80", esclave() faire 
+	console->log("Le serveur écoute sur le port 80 !") fin
+fermer)
