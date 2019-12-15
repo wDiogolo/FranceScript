@@ -29,7 +29,7 @@ const version = require("../package.json");
 				
 				if(file === "package.json"){
 					let main = JSON.parse(readFileSync(filePath)).main.replace("./", "").split("/")[0];
-					console.log(main);
+					
 					let ls = lstatSync(main);
 					
 					if(ls.isDirectory()){
@@ -116,7 +116,6 @@ function file(fileName, path){
 
 function dir(path){
 	let files = readdirSync(path, { withFileTypes: true, encoding: "utf8" });
-	console.log(files);
 	
 	files.forEach(function(file){
 		if(file.isDirectory()){
