@@ -1,0 +1,8 @@
+constante Discord egal depend("discord.js") fin
+variable client egal nouveau Discord->Client() fin
+
+client->on("ready", esclave() ouvrir
+	console->log("Le bot est en ligne ( " + client->user->tag +")") fin
+refermer)
+
+bot->login("votre_token") fin
