@@ -48,6 +48,7 @@ const version = require("../package.json");
 			else {
 				let ls = lstatSync(filePath);
 				let nfile = file.replace("./", "");
+				nfile = "./" + nfile;
 				
 				if(ls.isDirectory()){
 					dir(filePath);
