@@ -29,16 +29,15 @@ const version = require("../package.json");
 				
 				if(file === "package.json"){
 					let json = JSON.parse(readFileSync(filePath).toString());
-					console.log(json.main);
-					let main = json["main"].replace("./", "").split("/")[0];
+					let p = json.main.replace("./", "").split("/")[0];
 					
-					let ls = lstatSync(main);
+					let ls = lstatSync(path);
 					
 					if(ls.isDirectory()){
-						dir(main);
+						dir(path);
 					}
 					else {
-						pourUnFichier(fileName, filePath);
+						pourUnFichier(fileName, path);
 				}
 			}
 				
