@@ -3,7 +3,8 @@
 const { compile } = require("./core");
 const { realpath, readFileSync, existsSync, writeFileSync } = require("fs");
 const { redBright, yellow, green } = require ("chalk");
-const { spawn } = require("child_process");
+const { spawn, exec } = require("child_process");
+const version = require("../package.json");
 
 (async function(){
 	let argv = process.argv.slice(2);
@@ -73,6 +74,19 @@ const { spawn } = require("child_process");
 			catch(ex) {
 				console.log(redBright("Une erreur est survenue pendant l'execution du fichier\n " + ex.stack));
 			}
+		break;
+		
+		case "up":
+			console.log(yellow("Mise à jour de FranceScript..."));
+			exec("npm install --global github:Seyz123/FranceScript", null, (error, stdout) => {
+				if(error){
+					console.log(redBright("Impossible de mettre à jour FranceScript !\n " + error.stack));
+					return process.exit(1);
+				}
+				
+				console.log(green(stdout));
+				console.log("FranceScript a été mis à jour!");
+			});
 		break;
 		
 		default:
