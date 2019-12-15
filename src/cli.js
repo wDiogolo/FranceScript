@@ -32,6 +32,7 @@ const version = require("../package.json");
 					
 					if(!json || !json.main){
 						console.log(chalk.red("Fichier package.json incorrect."));
+						return process.exit(1);
 					}
 					
 					let p = json.main.replace("./", "").split("/")[0];
@@ -42,6 +43,16 @@ const version = require("../package.json");
 					}
 					else {
 						pourUnFichier(fileName, p);
+				}
+			}
+			else {
+				let ls = lstatSync(filePath);
+				
+				if(ls.isDirectory()){
+					dir(filePath);
+				}
+				else {
+					pourUnFichier(file, filePath);
 				}
 			}
 				
