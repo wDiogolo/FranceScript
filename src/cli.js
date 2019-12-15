@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { compile } = require("./core");
-const { realpath, readFileSync, existsSync, readdirSync, lstatsSync, writeFileSync } = require("fs");
+const { realpath, readFileSync, existsSync, readdirSync, lstatSync, writeFileSync } = require("fs");
 const { redBright, yellow, green } = require ("chalk");
 const { spawn, exec } = require("child_process");
 const version = require("../package.json");
@@ -33,7 +33,7 @@ const version = require("../package.json");
 				
 				if(file === "package.json"){
 					let main = JSON.parse(readFileSync(filePath)).main.split("./")[0].split("/")[0];
-					let ls = lstatsSync(main);
+					let ls = lstatSync(main);
 					
 					if(ls.isDirectory()){
 						dir(main);
