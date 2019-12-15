@@ -63,7 +63,9 @@ const { spawn } = require("child_process");
 				child.stdout.on("data", (data) => {
 					console.log(data);
 				});
-				
+				child.on("error", (error) => {
+					console.log("Program exited with an error\n " + error.stack);
+				});
 				child.on("exit", (code) => {
 					console.log("Program exited with code : " + code);
 				});
