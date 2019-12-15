@@ -27,12 +27,13 @@ const version = require("../package.json");
 				let file = filePath.split("/").pop();
 				let fileName = file.split(".")[0];
 				
-				console.log(file)
-				console.log(fileName)
-				console.log(filePath)
+				console.log(file);
+				console.log(fileName);
+				console.log(filePath);
 				
 				if(file === "package.json"){
-					let main = JSON.parse(readFileSync(filePath)).main.split("./")[0].split("/")[0];
+					let main = JSON.parse(readFileSync(filePath)).main.replace("./", "").split("/")[0];
+					console.log(main);
 					let ls = lstatSync(main);
 					
 					if(ls.isDirectory()){
