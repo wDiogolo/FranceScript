@@ -5,4 +5,7 @@ FranceScript est un "langage" compilé en JavaScript.
 Exécutez : `npm install -g github:Seyz123/FranceScript`
 
 ## Exemples
-**Bientôt ;)**
+Jetez un coup d'oeil dans le répertoire "exemples"
+
+## Liens utiles
+[Discord (en création)](https://discord.gg/Qwg9XCm)
