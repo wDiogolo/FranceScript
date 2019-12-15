@@ -1,0 +1,16 @@
+constate dgram egal depend("dgram") fin
+variable socket egal dgram->createSocket("udp4") fin
+
+socket->on("listening", esclave() ouvrir
+	console->log("Le socket est actif !") fin
+refermer)
+
+socket->on("error", esclave(error) ouvrir
+	console->log("Un erreur est survenue\n " + error.stack) fin
+refermer)
+
+socket->on("message", esclave(buffer) vasYOuvreTaGueule
+	console->log("Reception d'un message !\n " + buffer) fin
+vasYFermeTaGueule)
+
+socket->listen(19132) fin
