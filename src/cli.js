@@ -3,7 +3,7 @@
 const { compile } = require("./core");
 const { realpath, readFileSync, existsSync, writeFileSync } = require("fs");
 const { redBright, yellow, green } = require ("chalk");
-const { exec } = require("child_process");
+const { spawn } = require("child_process");
 
 (async function(){
 	let argv = process.argv.slice(2);
@@ -58,11 +58,14 @@ const { exec } = require("child_process");
 				writeFileSync(compiledPath, compiledContent, "utf8");
 				console.log(green("Le fichier a été compilé avec succès, execution..."));
 				
-				exec("node " + compiledPath, null, (error) => {
-					if(error){
-						console.log(error);
-						return process.exit(1);
-					}
+				let child = spawn("node " + compiledPath);
+				
+				child.stdout.on("data", (data) => {
+					console.log(data);
+				});
+				
+				child.on("exit", (code) => {
+					console.log("Program exited with code : " + code);
 				});
 			}
 			catch(ex) {
