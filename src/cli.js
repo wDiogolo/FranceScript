@@ -111,11 +111,10 @@ const version = require("../package.json");
 
 function dir(path){
 	let files = readdirSync(path, { withFileTypes: true, encoding: "utf8" });
-	console.log(files);
 	
 	files.forEach((file) => {
 		if(file.isDirectory()){
-			dir(path);
+			dir(path + file.name);
 		}
 		else {
 			if(file.name.split(".").pop() !== "fr") {
