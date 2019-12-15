@@ -27,6 +27,9 @@ const version = require("../package.json");
 				let file = filePath.split("/").pop();
 				let fileName = file.split(".")[0];
 				
+				console.log(file)
+				console.log(fileName)
+				
 				if(file === "package.json"){
 					let main = require(filePath).main.split("./")[0].split("/")[0];
 					let ls = lstatsSync(main);
