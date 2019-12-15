@@ -108,16 +108,15 @@ function dir(path){
 	let files = readdirSync(path, { withFileTypes: true, encoding: "utf8" });
 	
 	files.forEach((frFile) => {
-		console.log(frFile);
 		if(frFile.isDirectory()){
-			dir(frFile.path);
+			dir(path);
 		}
 		else {
 			if(frFile.name.split(".").pop() !== "fr") {
 				return;
 			}
 			
-			pourUnFichier(frFile.name.split(".")[0], path);
+			pourUnFichier(frFile.name.split(".")[0], path + "/" + frFile.name.split(".")[0]);
 		}
 	});
 }
