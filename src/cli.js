@@ -26,12 +26,13 @@ const version = require("../package.json");
 				
 				let file = filePath.split("/").pop();
 				let fileName = file.split(".")[0];
+				let cp;
 				
 				if(file === "package.json"){
 					let json = JSON.parse(readFileSync(filePath).toString());
 					let p = json.main.replace("./", "").split("/")[0];
-					
 					let ls = lstatSync(p);
+					cp = p.split("/").slice(0, 1) + fileName + ".js";
 					
 					if(ls.isDirectory()){
 						dir(p);
@@ -41,7 +42,7 @@ const version = require("../package.json");
 				}
 			}
 				
-				console.log(green("Le projet a été compilé avec succès vers : " + compilePath));
+				console.log(green("Le projet a été compilé avec succès vers : " + cp));
 			}
 			catch(ex) {
 				console.log(redBright("Une erreur est survenue pendant la compilation du fichier\n " + ex.stack));
