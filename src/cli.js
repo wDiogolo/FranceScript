@@ -39,7 +39,7 @@ const version = require("../package.json");
 					if(ls.isDirectory()){
 						dir(main);
 					}
-					else if(ls.isFile()){
+					else {
 						file(fileName, filePath);
 				}
 			}
@@ -122,10 +122,10 @@ function dir(path){
 	let files = readdirSync(path);
 	
 	files.forEach(function(file){
-		if(file.isDir()){
+		if(file.isDirectory()){
 			dir(file.path);
 		}
-		else if(file.isFile()){
+		else {
 			if(file.name.split(".").pop() !== "fr") {
 				return;
 			}
