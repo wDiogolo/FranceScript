@@ -127,7 +127,7 @@ function pourUnFichier(fileName, path){
 	
 	// Compiler vers ./dist/
 	
-	writeFileSync(path, compiledContent, "utf8");
+	writeFileSync("./" + path, compiledContent, "utf8");
 	
 	console.log("Ficher " + fileName + " compilé.");
 }
