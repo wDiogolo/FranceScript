@@ -117,16 +117,16 @@ function file(fileName, path){
 function dir(path){
 	let files = readdirSync(path, { withFileTypes: true, encoding: "utf8" });
 	
-	files.forEach(function(file){
-		if(file.isDirectory()){
-			dir(file.path);
+	files.forEach(function(frFile){
+		if(frFile.isDirectory()){
+			dir(frFile.path);
 		}
 		else {
-			if(file.name.split(".").pop() !== "fr") {
+			if(frFile.name.split(".").pop() !== "fr") {
 				return;
 			}
 			
-			file(file.path);
+			file(frFile.path);
 		}
 	});
 }
