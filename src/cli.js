@@ -47,6 +47,7 @@ const version = require("../package.json");
 			}
 			else {
 				let nfile = filePath;
+				console.log(nfile);
 				
 				if(filePath.includes("./")){
 					nfile = nfile.slice(2);
