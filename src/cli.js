@@ -124,11 +124,12 @@ function dir(path){
 function pourUnFichier(fileName, path){
 	let fileContent = readFileSync(path).toString();
 	let compiledContent = compile(fileContent, "fr");
-	path = realpathSync("./" + path);
+	let cPath = realpathSync("./" + path.split("/").slice(0, 1).join("/"));
+	let compiledPath = cPath + fileName + ".js";
 	
 	// Compiler vers ./dist/
 	
-	writeFileSync(path, compiledContent, "utf8");
+	writeFileSync(compiledPath, compiledContent, "utf8");
 	
-	console.log("Ficher " + fileName + " compilé vers : " + path);
+	console.log("Ficher " + fileName + " compilé vers : " + compiledPath);
 }
