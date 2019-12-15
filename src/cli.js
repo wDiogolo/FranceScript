@@ -42,7 +42,7 @@ const version = require("../package.json");
 						dir(p);
 					}
 					else {
-						pourUnFichier(fileName, p, true);
+						pourUnFichier(fileName, p);
 					}
 				}
 			}
