@@ -143,7 +143,7 @@ function dir(path){
 	});
 }
 
-function pourUnFichier(fileName, path, package = false){
+function pourUnFichier(fileName, path, pack = false){
 	let fileContent = readFileSync(path).toString();
 	let compiledContent = compile(fileContent, "fr");
 	let fileExt = fileName + ".fr";
@@ -151,7 +151,7 @@ function pourUnFichier(fileName, path, package = false){
 	
 	// Compiler vers ./dist/
 	
-	writeFileSync((!package ? path : cPath), compiledContent, "utf8");
+	writeFileSync(pack ? cPath : path, compiledContent, "utf8");
 	
-	console.log("Ficher " + fileName + ".fr" + " compilé vers : " + (!package ? path : cPath));
+	console.log("Ficher " + fileName + ".fr" + " compilé vers : " + pack ? cPath : path);
 }
