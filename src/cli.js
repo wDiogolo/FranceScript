@@ -24,7 +24,7 @@ const version = require("../package.json");
 				
 				console.log(yellow("Compilation en cours..."));
 				
-				let file = filePath.replace("./", "").split("/").pop();
+				let file = filePath.split("/").pop();
 				let fileName = file.split(".")[0];
 				
 				if(file === "package.json"){
@@ -120,7 +120,7 @@ function dir(path){
 				return;
 			}
 			
-			pourUnFichier(frFile.name.split(".")[0], path + "/" + frFile.name, true);
+			pourUnFichier(frFile.name.split(".")[0], path + "/" + frFile.name);
 		}
 	});
 }
