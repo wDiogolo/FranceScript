@@ -26,6 +26,7 @@ const version = require("../package.json");
 				
 				let file = filePath.split("/").pop();
 				let fileName = file.split(".")[0];
+				filePath = realpath(filePath);
 				
 				console.log(file)
 				console.log(fileName)
