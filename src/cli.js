@@ -58,7 +58,7 @@ const { spawn } = require("child_process");
 				writeFileSync(compiledPath, compiledContent, "utf8");
 				console.log(green("Le fichier a été compilé avec succès, execution..."));
 				
-				let child = spawn("node " + compiledPath);
+				let child = spawn("node", [compiledPath]);
 				
 				child.stdout.on("data", (data) => {
 					console.log(data);
