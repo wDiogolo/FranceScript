@@ -151,7 +151,7 @@ function pourUnFichier(fileName, path, package = false){
 	
 	// Compiler vers ./dist/
 	
-	writeFileSync(!package ? path : cPath, compiledContent, "utf8");
+	writeFileSync((!package ? path : cPath), compiledContent, "utf8");
 	
-	console.log("Ficher " + fileName + ".fr" + " compilé vers : " + !package ? path : cPath);
+	console.log("Ficher " + fileName + ".fr" + " compilé vers : " + (!package ? path : cPath));
 }
