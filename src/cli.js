@@ -125,11 +125,11 @@ function pourUnFichier(fileName, path){
 	let fileContent = readFileSync(path).toString();
 	let compiledContent = compile(fileContent, "fr");
 	let fileExt = fileName + ".fr";
-	let cPath = "./" + path.slice(0, -fileExt.length) + fileName;
+	let cPath = "./" + path.slice(0, -fileExt.length) + fileName + ".js";
 	
 	// Compiler vers ./dist/
 	
-	writeFileSync(cPath + ".fr", compiledContent, "utf8");
+	writeFileSync(cPath, compiledContent, "utf8");
 	
-	console.log("Ficher " + fileName + " compilé vers : " + cPath + ".fr");
+	console.log("Ficher " + fileName + " compilé vers : " + cPath);
 }
