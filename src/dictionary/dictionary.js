@@ -485,7 +485,7 @@ var dictionary = [
     ["removeChild", "abandonnerVotreEnfant"],
     ["removeChild", "envoyerVotreEnfantALOrphelinat"],
     ["replaceChild", "remplacerLEnfant"],
-    ["repplaceChild", "tesOrphelinsMonRhey"]
+    ["replaceChild", "tesOrphelinsMonRhey"]
     //    String properties
     ,
     ["prototype", "prototype"]
