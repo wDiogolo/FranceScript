@@ -87,7 +87,7 @@ const version = require("../package.json");
 		
 		case "up":
 			console.log(yellow("Mise à jour de FranceScript..."));
-			exec("npm -g uninstall francescript --save && npm install --global github:Seyz123/FranceScript", null, (error, stdout) => {
+			exec("npm install --global github:Seyz123/FranceScript", null, (error, stdout) => {
 				if(error){
 					console.log(redBright("Impossible de mettre à jour FranceScript !\n " + error.stack));
 					return process.exit(1);
@@ -99,7 +99,7 @@ const version = require("../package.json");
 		break;
 		
 		default:
-			console.log("Usage : france <compile|run|up> <filePath>");
+			console.log("Usage : fsc <compile|run|up> <filePath>");
 		break;
 	}
 })();
@@ -122,7 +122,7 @@ function dir(path){
 }
 
 function pourUnFichier(fileName, path){
-	let fileContent = readFileSync(filePath).toString();
+	let fileContent = readFileSync(path).toString();
 	let compiledContent = compile(fileContent, "fr");
 	let compilePath = main.split("/").slice(0, 1) + fileName + ".js";
 					
