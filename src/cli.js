@@ -37,6 +37,7 @@ const version = require("../package.json");
 					else if(ls.isFile()){
 						file(fileName, filePath);
 				}
+			}
 				
 				console.log(green("Le projet a été compilé avec succès vers : " + compilePath));
 			}
