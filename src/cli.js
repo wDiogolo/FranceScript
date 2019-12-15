@@ -114,7 +114,7 @@ function dir(path){
 	
 	files.forEach((file) => {
 		if(file.isDirectory()){
-			dir(path + "/" file.name);
+			dir(path + "/" + file.name);
 		}
 		else {
 			if(file.name.split(".").pop() !== "fr") {
