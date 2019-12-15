@@ -108,6 +108,7 @@ function dir(path){
 	let files = readdirSync(path, { withFileTypes: true, encoding: "utf8" });
 	
 	files.forEach((frFile) => {
+		console.log(frFile);
 		if(frFile.isDirectory()){
 			dir(frFile.path);
 		}
