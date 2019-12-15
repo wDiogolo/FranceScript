@@ -124,7 +124,7 @@ function dir(path){
 function pourUnFichier(fileName, path){
 	let fileContent = readFileSync(path).toString();
 	let compiledContent = compile(fileContent, "fr");
-	let cPath = realpathSync("./" + path.slice(0, (fileName + ".fr").length);
+	let cPath = realpathSync("./" + path.slice(0, (fileName + ".fr").length));
 	
 	// Compiler vers ./dist/
 	
