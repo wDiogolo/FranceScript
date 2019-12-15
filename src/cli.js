@@ -116,12 +116,12 @@ function dir(path){
 				return;
 			}
 			
-			file(frFile.name.split(".")[0], frFile.path);
+			pourUnFichier(frFile.name.split(".")[0], frFile.path);
 		}
 	});
 }
 
-function file(fileName, path){
+function pourUnFichier(fileName, path){
 	let fileContent = readFileSync(filePath).toString();
 	let compiledContent = compile(fileContent, "fr");
 	let compilePath = main.split("/").slice(0, 1) + fileName + ".js";
