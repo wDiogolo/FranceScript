@@ -39,10 +39,10 @@ const version = require("../package.json");
 					let ls = lstatSync(p);
 					
 					if(ls.isDirectory()){
-						dir(p, true);
+						dir(p);
 					}
 					else {
-						pourUnFichier(fileName, p);
+						pourUnFichier(fileName, p, true);
 				}
 			}
 			else {
@@ -131,7 +131,7 @@ function dir(path){
 	
 	files.forEach((frFile) => {
 		if(frFile.isDirectory()){
-			dir(path);
+			dir(path, true);
 		}
 		else {
 			if(frFile.name.split(".").pop() !== "fr") {
