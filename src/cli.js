@@ -116,7 +116,7 @@ function dir(path){
 				return;
 			}
 			
-			pourUnFichier(frFile.name.split(".")[0], path + "/" + frFile.name.split(".")[0]);
+			pourUnFichier(frFile.name.split(".")[0], path + "/" + frFile.name);
 		}
 	});
 }
