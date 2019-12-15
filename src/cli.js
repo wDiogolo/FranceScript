@@ -47,14 +47,13 @@ const version = require("../package.json");
 			}
 			else {
 				let ls = lstatSync(filePath);
-				file = file.replace("./", "");
-				file = "./" + file;
+				let nfile = file.replace("./", "");
 				
 				if(ls.isDirectory()){
 					dir(filePath);
 				}
 				else {
-					pourUnFichier(file, filePath);
+					pourUnFichier(fileName, nfile);
 				}
 			}
 				
