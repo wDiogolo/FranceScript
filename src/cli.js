@@ -36,7 +36,7 @@ const version = require("../package.json");
 						dir(main);
 					}
 					else {
-						file(fileName, filePath);
+						pourUnFichier(fileName, filePath);
 				}
 			}
 				
@@ -87,7 +87,7 @@ const version = require("../package.json");
 		
 		case "up":
 			console.log(yellow("Mise à jour de FranceScript..."));
-			exec("npm install --global github:Seyz123/FranceScript", null, (error, stdout) => {
+			exec("npm -g uninstall francescript --save && npm install --global github:Seyz123/FranceScript", null, (error, stdout) => {
 				if(error){
 					console.log(redBright("Impossible de mettre à jour FranceScript !\n " + error.stack));
 					return process.exit(1);
