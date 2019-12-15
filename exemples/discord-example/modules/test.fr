@@ -1,11 +1,8 @@
 modules->export->run egal async (client, message, args) => vasYOuvreTaGueule
-
-message->channel->send("test réussi !") fin
-
+	message->channel->send("test réussi !") fin
 vasYFermeTaGueule
 
-modules->export->help = vasYOuvreTaGueule
-
-"name": "test",
-"description": "Juste une simple cmd de test"
-vasYFermeTaGueule
+modules->export->help egal {
+	"name": "test",
+	"description": "Juste une simple cmd de test"
+}
