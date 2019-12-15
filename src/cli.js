@@ -85,7 +85,7 @@ const version = require("../package.json");
 				}
 				
 				console.log(green(stdout));
-				console.log(green("FranceScript a été mis à jour!");
+				console.log(green("FranceScript a été mis à jour!"));
 			});
 		break;
 		
