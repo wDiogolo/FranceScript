@@ -104,16 +104,6 @@ const version = require("../package.json");
 	}
 })();
 
-function file(fileName, path){
-	let fileContent = readFileSync(filePath).toString();
-	let compiledContent = compile(fileContent, "fr");
-	let compilePath = main.split("/").slice(0, 1) + fileName + ".js";
-					
-	writeFileSync(compilePath, compiledContent, "utf8");
-	
-	console.log("Ficher " + fileName + " compilé.");
-}
-
 function dir(path){
 	let files = readdirSync(path, { withFileTypes: true, encoding: "utf8" });
 	
@@ -129,4 +119,14 @@ function dir(path){
 			file(frFile.path);
 		}
 	});
+}
+
+function file(fileName, path){
+	let fileContent = readFileSync(filePath).toString();
+	let compiledContent = compile(fileContent, "fr");
+	let compilePath = main.split("/").slice(0, 1) + fileName + ".js";
+					
+	writeFileSync(compilePath, compiledContent, "utf8");
+	
+	console.log("Ficher " + fileName + " compilé.");
 }
