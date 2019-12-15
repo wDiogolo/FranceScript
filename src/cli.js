@@ -74,14 +74,14 @@ const version = require("../package.json");
 					console.log(data.toString());
 				});
 				child.on("error", (error) => {
-					console.log("Program exited with an error\n " + error.stack);
+					console.log("Le programme s'est arrêté à cause d'une erreur !\n " + error.stack);
 				});
 				child.on("exit", (code) => {
-					console.log("Program exited with code : " + code);
+					console.log("Le programme s'est arrêté avec le code : " + code);
 				});
 			}
 			catch(ex) {
-				console.log(redBright("Une erreur est survenue pendant l'execution du fichier\n " + ex.stack));
+				console.log(redBright("Une erreur est survenue pendant l'execution du fichier !\n " + ex.stack));
 			}
 		break;
 		
@@ -122,12 +122,12 @@ function dir(path){
 }
 
 function pourUnFichier(fileName, path){
-	console.log(path);
 	let fileContent = readFileSync(path).toString();
 	let compiledContent = compile(fileContent, "fr");
-	let compilePath = path.split("/").slice(0, 1) + fileName + ".js";
-					
-	writeFileSync(compilePath, compiledContent, "utf8");
+	
+	// Compiler vers ./dist/
+	
+	writeFileSync(path, compiledContent, "utf8");
 	
 	console.log("Ficher " + fileName + " compilé.");
 }
