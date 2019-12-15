@@ -125,7 +125,7 @@ function dir(path){
 function pourUnFichier(fileName, path){
 	let fileContent = readFileSync(path).toString();
 	let compiledContent = compile(fileContent, "fr");
-	let compilePath = main.split("/").slice(0, 1) + fileName + ".js";
+	let compilePath = path.split("/").slice(0, 1) + fileName + ".js";
 					
 	writeFileSync(compilePath, compiledContent, "utf8");
 	
