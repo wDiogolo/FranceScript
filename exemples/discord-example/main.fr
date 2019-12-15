@@ -8,9 +8,9 @@ client->modules = nouveau Discord->Collection() fin
 
 
 fs->readdir("./modules/", (e, files) => vasYOuvreTaGueule
-	si(e) retourne console->log("erreur pour lire dans le dossier: " + e.stack) fin
+	si(e) retourne console->log("erreur pour lire dans le dossier: " + e->stack) fin
 
-	let frjsfiles = files->filter(f => f.split(".").pop() tripleegal "js") fin
+	let frjsfiles = files->filter(f => f->split(".")->pop() tripleegal "js") fin
 	si(frjsfiles->taille tripleegal 0) retourne console->log("Module avec 0 fichiers en js !!")
 
 	frjsfiles->pourChaqueJuif((f) => vasYOuvreTaGueule
@@ -33,7 +33,7 @@ client->on("message", async message => vasYOuvreTaGueule
 	si(!cmdargs->commencerAvec(config->prefix)) retourne fin
 		let cmds egal client->modules->get(cmdargs->slice(config->prefix->taille)) fin
 		si(cmds) vasYOuvreTaGueule
-			cmds.run(client, message, args) fin
+			cmds->run(client, message, args) fin
 		vasYFermeTaGueule
 vasYFermeTaGueule)
 
