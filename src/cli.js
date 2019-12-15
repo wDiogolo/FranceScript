@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { compile } = require("./core");
-const { realpath, readFileSync, existsSync, readdirSync, lstatSync, writeFileSync } = require("fs");
+const { realpathSync, readFileSync, existsSync, readdirSync, lstatSync, writeFileSync } = require("fs");
 const { redBright, yellow, green } = require ("chalk");
 const { spawn, exec } = require("child_process");
 const version = require("../package.json");
@@ -124,10 +124,11 @@ function dir(path){
 function pourUnFichier(fileName, path){
 	let fileContent = readFileSync(path).toString();
 	let compiledContent = compile(fileContent, "fr");
+	path = realpathSync("./" + path);
 	
 	// Compiler vers ./dist/
 	
-	writeFileSync("./" + path, compiledContent, "utf8");
+	writeFileSync(path, compiledContent, "utf8");
 	
-	console.log("Ficher " + fileName + " compilé.");
+	console.log("Ficher " + fileName + " compilé vers : " + path);
 }
