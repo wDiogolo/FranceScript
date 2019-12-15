@@ -61,7 +61,7 @@ const { spawn } = require("child_process");
 				let child = spawn("node", [compiledPath]);
 				
 				child.stdout.on("data", (data) => {
-					console.log(data);
+					console.log(data.toString());
 				});
 				child.on("error", (error) => {
 					console.log("Program exited with an error\n " + error.stack);
