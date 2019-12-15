@@ -12,7 +12,7 @@
     "build": "gulp build"
   },
   "bin": {
-    "france": "./src/cli.js"
+    "fsc": "./src/cli.js"
   },
   "keywords": [
     "transpiler",
