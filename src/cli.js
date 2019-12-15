@@ -39,10 +39,10 @@ const version = require("../package.json");
 					let ls = lstatSync(p);
 					
 					if(ls.isDirectory()){
-						dir(p, true);
+						dir(p);
 					}
 					else {
-						pourUnFichier(fileName, p);
+						pourUnFichier(fileName, p, true);
 				}
 			}
 			else {
