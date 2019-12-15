@@ -126,7 +126,6 @@ function pourUnFichier(fileName, path){
 	let compiledContent = compile(fileContent, "fr");
 	let fileExt = fileName + ".fr";
 	let cPath = "./" + path.slice(0, -fileExt.length) + fileName;
-	let cPath = realpathSync(cPath + ".fr");
 	
 	// Compiler vers ./dist/
 	
