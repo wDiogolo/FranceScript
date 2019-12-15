@@ -29,6 +29,7 @@ const version = require("../package.json");
 				
 				console.log(file)
 				console.log(fileName)
+				console.log(filePath)
 				
 				if(file === "package.json"){
 					let main = require(filePath).main.split("./")[0].split("/")[0];
