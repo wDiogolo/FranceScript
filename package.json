@@ -1,6 +1,6 @@
 {
   "name": "FranceScript",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Un \"langage\" uniquement français compilé en JavaScript et un peu troll.",
   "authors": "Seyz123 and NarumiLy",
   "main": "./src/core.js",
