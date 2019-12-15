@@ -29,20 +29,18 @@ const version = require("../package.json");
 				
 				if(file === "package.json"){
 					let json = JSON.parse(readFileSync(filePath).toString());
-					console.log(json);
-					let main = json.main.replace("./", "").split("/")[0];
-					
-					let ls = lstatSync(main);
+					let p = json.main.replace("./", "").split("/")[0];
+					let ls = lstatSync(p);
 					
 					if(ls.isDirectory()){
-						dir(main);
+						dir(p);
 					}
 					else {
-						pourUnFichier(fileName, filePath);
+						pourUnFichier(fileName, p);
 				}
 			}
 				
-				console.log(green("Le projet a été compilé avec succès vers : " + compilePath));
+				console.log(green("Le projet a été compilé avec succès!"));
 			}
 			catch(ex) {
 				console.log(redBright("Une erreur est survenue pendant la compilation du fichier\n " + ex.stack));
@@ -124,9 +122,10 @@ function dir(path){
 }
 
 function pourUnFichier(fileName, path){
+	console.log(path);
 	let fileContent = readFileSync(path).toString();
 	let compiledContent = compile(fileContent, "fr");
-	let compilePath = main.split("/").slice(0, 1) + fileName + ".js";
+	let compilePath = path.split("/").slice(0, 1) + fileName + ".js";
 					
 	writeFileSync(compilePath, compiledContent, "utf8");
 	
