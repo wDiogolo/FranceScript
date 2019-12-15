@@ -1,0 +1,16 @@
+classe Animal ouvrir
+    constructeur(nom) ouvrir
+        ceci->nom egal nom fin
+    refermer
+
+    parler(paroles) ouvrir
+        console->log(ceci->recupererNom() + " > " + paroles) fin
+    refermer
+
+    recupererNom() ouvrir
+        retourne ceci->nom fin
+    refermer
+refermer
+
+variable jack egal nouveau Animal("Jack") fin
+jack->parler("Bonjour !") fin
