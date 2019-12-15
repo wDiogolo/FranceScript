@@ -43,26 +43,8 @@ const version = require("../package.json");
 					}
 					else {
 						pourUnFichier(fileName, p, true);
+					}
 				}
-			}
-			else {
-				let nfile = filePath;
-				
-				if(filePath.includes("./")){
-					nfile = nfile.slice(2);
-				}
-				
-				let ls = lstatSync(nfile);
-				
-				if(ls.isDirectory()){
-					dir(filePath);
-				}
-				else {
-					pourUnFichier(fileName, nfile);
-				}
-			}
-				
-				console.log(green("Le projet a été compilé avec succès!"));
 			}
 			catch(ex) {
 				console.log(redBright("Une erreur est survenue pendant la compilation du fichier\n " + ex.stack));
