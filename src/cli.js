@@ -39,7 +39,7 @@ const version = require("../package.json");
 					let ls = lstatSync(p);
 					
 					if(ls.isDirectory()){
-						dir(p);
+						dir(p, true);
 					}
 					else {
 						pourUnFichier(fileName, p);
@@ -143,7 +143,7 @@ function dir(path){
 	});
 }
 
-function pourUnFichier(fileName, path){
+function pourUnFichier(fileName, path, package = false){
 	let fileContent = readFileSync(path).toString();
 	let compiledContent = compile(fileContent, "fr");
 	let fileExt = fileName + ".fr";
@@ -151,7 +151,7 @@ function pourUnFichier(fileName, path){
 	
 	// Compiler vers ./dist/
 	
-	writeFileSync(cPath, compiledContent, "utf8");
+	writeFileSync(!package ? path : cPath, compiledContent, "utf8");
 	
-	console.log("Ficher " + fileName + ".fr" + " compilé vers : " + cPath);
+	console.log("Ficher " + fileName + ".fr" + " compilé vers : " + !package ? path : cPath);
 }
