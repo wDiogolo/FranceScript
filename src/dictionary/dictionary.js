@@ -519,6 +519,7 @@ var dictionary = [
     ["split", "exploser"],
     ["split", "dynamiter"],
     ["startsWith", "commencerAvec"],
+    ["startsWith", "commenceAvec"],
     ["substr", "substr"],
     ["substring", "substring"],
     ["toLocaleLowerCase", "versLocalePetitCaractere"],
