@@ -90,7 +90,7 @@ const version = require("../package.json");
 		break;
 		
 		default:
-			console.log("Usage : france <compile|run> <filePath>");
+			console.log("Usage : france <compile|run|up> <filePath>");
 		break;
 	}
 })();
