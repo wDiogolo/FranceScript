@@ -28,7 +28,8 @@ const version = require("../package.json");
 				let fileName = file.split(".")[0];
 				
 				if(file === "package.json"){
-					let main = JSON.parse(readFileSync(filePath)).main.replace("./", "").split("/")[0];
+					let json = JSON.parse(readFileSync(filePath).toString());
+					let main = json.main.replace("./", "").split("/")[0];
 					
 					let ls = lstatSync(main);
 					
