@@ -124,6 +124,8 @@ function dir(path){
 function pourUnFichier(fileName, path){
 	let fileContent = readFileSync(path).toString();
 	let compiledContent = compile(fileContent, "fr");
+	console.log(filewExt);
+	console.log(path);
 	let filewExt = fileName + ".fr";
 	let cPath = realpathSync("./" + path.slice(0, filewExt.length) + fileName + ".js");
 	
