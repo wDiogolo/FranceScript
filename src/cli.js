@@ -131,14 +131,14 @@ function dir(path){
 	
 	files.forEach((frFile) => {
 		if(frFile.isDirectory()){
-			dir(path, true);
+			dir(path);
 		}
 		else {
 			if(frFile.name.split(".").pop() !== "fr") {
 				return;
 			}
 			
-			pourUnFichier(frFile.name.split(".")[0], path + "/" + frFile.name);
+			pourUnFichier(frFile.name.split(".")[0], path + "/" + frFile.name, true);
 		}
 	});
 }
