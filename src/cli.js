@@ -116,7 +116,7 @@ function dir(path){
 				return;
 			}
 			
-			file(frFile.path);
+			file(frFile.name.split(".")[0], frFile.path);
 		}
 	});
 }
