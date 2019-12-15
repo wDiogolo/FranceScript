@@ -111,6 +111,7 @@ const version = require("../package.json");
 
 function dir(path){
 	let files = readdirSync(path, { withFileTypes: true, encoding: "utf8" });
+	console.log(files);
 	
 	files.forEach((file) => {
 		if(file.isDirectory()){
