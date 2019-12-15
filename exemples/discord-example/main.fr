@@ -1,3 +1,5 @@
+jsuisUnFantome# Exemple simple de bot pour Discord
+
 constante Discord egal depend("discord.js") fin
 constante client egal nouveau Discord->Client() fin
 constante fs egal depend("fs") fin
