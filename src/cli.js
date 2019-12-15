@@ -31,13 +31,13 @@ const version = require("../package.json");
 					let json = JSON.parse(readFileSync(filePath).toString());
 					let p = json.main.replace("./", "").split("/")[0];
 					
-					let ls = lstatSync(path);
+					let ls = lstatSync(p);
 					
 					if(ls.isDirectory()){
-						dir(path);
+						dir(p);
 					}
 					else {
-						pourUnFichier(fileName, path);
+						pourUnFichier(fileName, p);
 				}
 			}
 				
