@@ -125,11 +125,12 @@ function pourUnFichier(fileName, path){
 	let fileContent = readFileSync(path).toString();
 	let compiledContent = compile(fileContent, "fr");
 	let fileExt = fileName + ".fr";
+	let toReal = "./" + path.slice(0, fileExt.length) + fileName + ".js";
 	
 	console.log(fileExt);
-	console.log(path);
+	console.log(toReal);
 	
-	let cPath = realpathSync("./" + path.slice(0, (fileExt.length + 2)) + fileName + ".js");
+	let cPath = realpathSync(toReal);
 	
 	// Compiler vers ./dist/
 	
