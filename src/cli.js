@@ -44,6 +44,7 @@ const version = require("../package.json");
 					else {
 						pourUnFichier(fileName, p);
 					}
+					console.log(green("Le projet a été compilé avec succès!"));
 				}
 			}
 			catch(ex) {
@@ -111,16 +112,16 @@ const version = require("../package.json");
 function dir(path){
 	let files = readdirSync(path, { withFileTypes: true, encoding: "utf8" });
 	
-	files.forEach((frFile) => {
-		if(frFile.isDirectory()){
+	files.forEach((file) => {
+		if(file.isDirectory()){
 			dir(path);
 		}
 		else {
-			if(frFile.name.split(".").pop() !== "fr") {
+			if(file.name.split(".").pop() !== "fr") {
 				return;
 			}
 			
-			pourUnFichier(frFile.name.split(".")[0], path + "/" + frFile.name);
+			pourUnFichier(file.name.split(".")[0], path + "/" + file.name);
 		}
 	});
 }
@@ -129,7 +130,7 @@ function pourUnFichier(fileName, path){
 	let fileContent = readFileSync(path).toString();
 	let compiledContent = compile(fileContent, "fr");
 	let fileExt = fileName + ".fr";
-	let cPath = "./" + path.slice(0, -fileExt.length) + fileName + ".js";
+	let cPath = "./" + path.slice(0, -fileExt.length) + fileExt;
 	
 	// Compiler vers ./dist/
 	
