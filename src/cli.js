@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { compile } = require("./core");
-const { realpath, readFileSync, existsSync, writeFileSync } = require("fs");
+const { realpath, readFileSync, existsSync, readdirSync, lstatsSync, writeFileSync } = require("fs");
 const { redBright, yellow, green } = require ("chalk");
 const { spawn, exec } = require("child_process");
 const version = require("../package.json");
@@ -24,14 +24,21 @@ const version = require("../package.json");
 				
 				console.log(yellow("Compilation en cours..."));
 				
-				let fileName = filePath.split("/").pop().split(".")[0];
-				let fileContent = readFileSync(filePath).toString();
-				let compiledContent = compile(fileContent, "fr");
-				let compilePath = "./" + fileName + ".js";
+				let file = filePath.split("/").pop();
+				let fileName = file.split(".")[0];
 				
-				writeFileSync(compilePath, compiledContent, "utf8");
+				if(file === "package.json"){
+					let main = require(filePath).main.split("./")[0].split("/")[0];
+					let ls = lstatsSync(main);
+					
+					if(ls.isDirectory()){
+						dir(main);
+					}
+					else if(ls.isFile()){
+						file(fileName, filePath);
+				}
 				
-				console.log(green("Le fichier a été compilé avec succès vers : " + compilePath));
+				console.log(green("Le projet a été compilé avec succès vers : " + compilePath));
 			}
 			catch(ex) {
 				console.log(redBright("Une erreur est survenue pendant la compilation du fichier\n " + ex.stack));
@@ -94,3 +101,26 @@ const version = require("../package.json");
 		break;
 	}
 })();
+
+function file(fileName, path){
+	let fileContent = readFileSync(filePath).toString();
+	let compiledContent = compile(fileContent, "fr");
+	let compilePath = main.split("/").slice(0, 1) + fileName + ".js";
+					
+	writeFileSync(compilePath, compiledContent, "utf8");
+	
+	console.log("Ficher " + fileName + " compilé.");
+}
+
+function dir(path){
+	let files = readdirSync(path);
+	
+	files.forEach(function(file){
+		if(file.isDir()){
+			dir(file.path);
+		}
+		else {
+			file(file.path);
+		}
+	});
+}
