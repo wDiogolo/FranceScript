@@ -29,6 +29,11 @@ const version = require("../package.json");
 				
 				if(file === "package.json"){
 					let json = JSON.parse(readFileSync(filePath).toString());
+					
+					if(!json || !json.main){
+						console.log(chalk.red("Fichier package.json incorrect."));
+					}
+					
 					let p = json.main.replace("./", "").split("/")[0];
 					let ls = lstatSync(p);
 					
@@ -131,5 +136,5 @@ function pourUnFichier(fileName, path){
 	
 	writeFileSync(cPath, compiledContent, "utf8");
 	
-	console.log("Ficher " + fileName + " compilé vers : " + cPath);
+	console.log("Ficher " + fileName + ".fr" + " compilé vers : " + cPath);
 }
