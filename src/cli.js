@@ -119,7 +119,11 @@ function dir(path){
 		if(file.isDir()){
 			dir(file.path);
 		}
-		else {
+		else if(file.isFile()){
+			if(file.name.split(".").pop() !== "fr") {
+				return;
+			}
+			
 			file(file.path);
 		}
 	});
