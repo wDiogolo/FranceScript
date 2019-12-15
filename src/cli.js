@@ -85,12 +85,12 @@ const version = require("../package.json");
 				}
 				
 				console.log(green(stdout));
-				console.log("FranceScript a été mis à jour!");
+				console.log(green("FranceScript a été mis à jour!");
 			});
 		break;
 		
 		default:
-			console.log("Usage : france <compile|run|up> <filePath>");
+			console.log("Usage : france <compile|run|up> <filePath>"));
 		break;
 	}
 })();
