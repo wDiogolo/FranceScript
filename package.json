@@ -5,8 +5,8 @@
   "authors": "Seyz123 and NarumiLy",
   "main": "./src/core.js",
   "repository": {
-   "type": "github",
-   "url": "https://github.com/Seyz123/FranceScript"
+    "type": "github",
+    "url": "https://github.com/Seyz123/FranceScript"
   },
   "scripts": {
     "build": "gulp build"
@@ -23,13 +23,16 @@
     "babelify": "^7.3.0",
     "browserify": "^13.1.1",
     "chai": "^3.5.0",
+    "chalk": "^3.0.0",
+    "discord.js": "^11.5.1",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "gulp": "^3.9.1",
     "gulp-add": "0.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-uglify": "^2.0.0",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "chalk": "^3.0.0"
+    "vinyl-source-stream": "^1.1.0"
   }
 }

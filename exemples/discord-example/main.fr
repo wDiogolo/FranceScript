@@ -27,12 +27,12 @@ vasYFermeTaGueule)
 
 
 client->on("ready", esclave() vasYOuvreTaGueule
-
+constante e egal 
 console->log("Bot on !") fin
 
 vasYFermeTaGueule)
 
-client->on("message", async message => vasYOuvreTaGueule
+client->on("message", async (message) => vasYOuvreTaGueule
 
 constante msgargs egal message->content->split(/\s+/g) fin
 constante cmdargs egal msgargs[0] fin
