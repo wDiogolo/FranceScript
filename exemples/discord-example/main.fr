@@ -8,42 +8,33 @@ client->modules = nouveau Discord->Collection() fin
 
 
 fs->readdir("./modules/", (e, files) => vasYOuvreTaGueule
+	si(e) retourne console->log("erreur pour lire dans le dossier: " + e->stack) fin
 
-si(e) retourne console->log("erreur pour lire dans le dossier: " + e.stack) fin
+	let frjsfiles = files->filter(f => f->split(".")->pop() tripleegal "js") fin
+	si(frjsfiles->taille tripleegal 0) retourne console->log("Module avec 0 fichiers en js !!")
 
-let frjsfiles = files->filter(f => f.split(".").pop() tripleegal "js") fin
-
-si(frjsfiles->taille tripleegal 0) retourne console->log("Module avec 0 fichiers en js !!")
-
-frjsfiles->pourChaqueJuif((f) => vasYOuvreTaGueule
-
-let modulesloads egal depend(`./modules/${f}`) fin
-console->log("[LOADING]" + f) fin
-client->modules->set(modulesloads->help->name, modulesloads) fin
-
-vasYFermeTaGueule)
-
+	frjsfiles->pourChaqueJuif((f) => vasYOuvreTaGueule
+		let modulesloads egal depend(`./modules/${f}`) fin
+		console->log("[LOADING]" + f) fin
+		client->modules->set(modulesloads->help->name, modulesloads) fin
+	vasYFermeTaGueule)
 vasYFermeTaGueule)
 
 
 client->on("ready", esclave() vasYOuvreTaGueule
-constante e egal 
-console->log("Bot on !") fin
-
+	console->log("Bot en ligne !") fin
 vasYFermeTaGueule)
 
 client->on("message", async (message) => vasYOuvreTaGueule
-
-constante msgargs egal message->content->split(/\s+/g) fin
-constante cmdargs egal msgargs[0] fin
-constant args egal msgargs[1] fin
-
-si(!cmdargs->commencerAvec(config.prefix)) retourne fin
-
-let cmds egal client->modules->get(cmdargs->slice(config->prefix->taille)) fin
-
-si(cmds) cmds.run(client, message, args) fin
-
+	constante msgargs egal message->content->split(/\s+/g) fin
+	constante cmdargs egal msgargs[0] fin
+	constant args egal msgargs[1] fin
+	
+	si(!cmdargs->commencerAvec(config->prefix)) retourne fin
+		let cmds egal client->modules->get(cmdargs->slice(config->prefix->taille)) fin
+		si(cmds) vasYOuvreTaGueule
+			cmds->run(client, message, args) fin
+		vasYFermeTaGueule
 vasYFermeTaGueule)
 
-client->login(config.token)
+client->login(config->token)

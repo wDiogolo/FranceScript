@@ -114,7 +114,7 @@ function dir(path){
 	
 	files.forEach((file) => {
 		if(file.isDirectory()){
-			dir(path + "/" file.name);
+			dir(path + "/" + file.name);
 		}
 		else {
 			if(file.name.split(".").pop() !== "fr") {
@@ -130,7 +130,7 @@ function pourUnFichier(fileName, path){
 	let fileContent = readFileSync(path).toString();
 	let compiledContent = compile(fileContent, "fr");
 	let fileExt = fileName + ".fr";
-	let cPath = "./" + path.slice(0, -fileExt.length) + fileExt;
+	let cPath = "./" + path.slice(0, -fileExt.length) + fileName + ".js";
 	
 	// Compiler vers ./dist/
 	
