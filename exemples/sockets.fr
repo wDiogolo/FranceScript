@@ -1,4 +1,4 @@
-constate dgram egal depend("dgram") fin
+constante dgram egal depend("dgram") fin
 variable socket egal dgram->createSocket("udp4") fin
 
 socket->on("listening", esclave() ouvrir
